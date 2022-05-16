@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import RadioButton from "../RadioButton/RadioButton";
 import TextInput from "../TextInput/TextInput";
 import {
@@ -7,14 +7,51 @@ import {
   InputGroup,
   InputLabel,
   RadioButtonGrid,
+  ResetButton,
+  Result,
+  ResultAmount,
+  ResultLabel,
+  ResultLabelContainer,
   ResultsContainer,
+  ResultSubtitle,
+  RightContainer,
   StyledMain,
 } from "./MainStyles";
 
 function Main() {
-  const [bill, setBill] = useState(undefined);
-  const [numberOfPeople, setNumberOfPeople] = useState(undefined);
-  const [tip, setTip] = useState(undefined);
+  const [bill, setBill] = useState("");
+  const [numberOfPeople, setNumberOfPeople] = useState("");
+  const [tip, setTip] = useState("");
+  const [resetDisabled, setResetDisabled] = useState(true);
+  const [tipAmount, setTipAmount] = useState(0);
+  const [total, setTotal] = useState(0);
+
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
+
+  const handleReset = () => {
+    setBill("");
+    setNumberOfPeople("");
+    setTip("");
+  };
+
+  useEffect(() => {
+    if (bill || numberOfPeople || tip) {
+      setResetDisabled(false);
+    } else {
+      setResetDisabled(true);
+    }
+
+    if (bill && numberOfPeople && tip) {
+      setTipAmount((bill * (tip / 100)) / numberOfPeople);
+      setTotal((Number(bill) + bill * (tip / 100)) / numberOfPeople);
+    } else {
+      setTipAmount(0);
+      setTotal(0);
+    }
+  }, [bill, numberOfPeople, tip]);
 
   return (
     <StyledMain>
@@ -57,7 +94,31 @@ function Main() {
         </InputGroup>
       </Form>
 
-      <ResultsContainer></ResultsContainer>
+      <RightContainer>
+        <ResultsContainer>
+          <Result>
+            <ResultLabelContainer>
+              <ResultLabel>Tip Amount</ResultLabel>
+              <ResultSubtitle>/ person</ResultSubtitle>
+            </ResultLabelContainer>
+
+            <ResultAmount>{formatter.format(tipAmount)}</ResultAmount>
+          </Result>
+
+          <Result>
+            <ResultLabelContainer>
+              <ResultLabel>Total</ResultLabel>
+              <ResultSubtitle>/ person</ResultSubtitle>
+            </ResultLabelContainer>
+
+            <ResultAmount>{formatter.format(total)}</ResultAmount>
+          </Result>
+        </ResultsContainer>
+
+        <ResetButton onClick={handleReset} disabled={resetDisabled}>
+          Reset
+        </ResetButton>
+      </RightContainer>
     </StyledMain>
   );
 }

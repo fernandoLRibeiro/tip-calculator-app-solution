@@ -57,12 +57,76 @@ export const CustomTipInput = styled.input`
 
   &::placeholder {
     text-align: center;
-    color: ${({ theme }) => theme.colors.neutral.darkGrayishCyan};
+    color: ${({ theme }) => theme.colors.neutral.grayishCyan};
   }
 `;
 
-export const ResultsContainer = styled.div`
+export const RightContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 50%;
   background-color: ${({ theme }) => theme.colors.neutral.veryDarkCyan};
   border-radius: 0.5em;
+  padding: 2em;
+`;
+
+export const ResultsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+`;
+
+export const Result = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`;
+
+export const ResultLabelContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const ResultLabel = styled.p`
+  color: ${({ theme }) => theme.colors.neutral.veryLightGrayishCyan};
+  margin: 0;
+`;
+
+export const ResultSubtitle = styled.p`
+  font-size: 0.8em;
+  margin: 0;
+  color: ${({ theme }) => theme.colors.neutral.lightGrayishCyan};
+`;
+
+export const ResultAmount = styled.h1`
+  color: ${({ theme }) => theme.colors.primary.strongCyan};
+  margin: 0;
+`;
+
+export const ResetButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 1.25em;
+  padding: 0.25em;
+  outline: none;
+  border: 0;
+  border-radius: 0.2em;
+  background-color: ${({ theme }) => theme.colors.primary.strongCyan};
+  color: ${({ theme }) => theme.colors.neutral.veryDarkCyan};
+  text-transform: uppercase;
+  font-family: inherit;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    background-color: ${({ theme }) => theme.colors.neutral.lightGrayishCyan};
+  }
+
+  &:disabled {
+    background-color: ${({ theme }) => theme.colors.neutral.darkGrayishCyan};
+    cursor: default;
+  }
 `;

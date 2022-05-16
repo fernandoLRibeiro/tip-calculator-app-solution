@@ -26,9 +26,10 @@ export const Input = styled.input`
   outline: none;
   background-color: transparent;
   font-family: inherit;
-  color: ${({ theme }) => theme.colors.neutral.veryDarkGrayishCyan};
+  color: ${({ theme }) => theme.colors.neutral.veryDarkCyan};
   margin: 0;
   width: 100%;
+  cursor: pointer;
 
   &::placeholder {
     color: ${({ theme }) => theme.colors.neutral.grayishCyan};
