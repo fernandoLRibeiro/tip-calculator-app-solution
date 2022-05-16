@@ -9,6 +9,12 @@ export const GlobalStyles = createGlobalStyle`
         font-family: 'Space Mono', monospace;
         background-color: ${({ theme }) =>
           theme.colors.neutral.lightGrayishCyan};
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        width: 100vw;
+        margin: 0;
     }
 
 `;
