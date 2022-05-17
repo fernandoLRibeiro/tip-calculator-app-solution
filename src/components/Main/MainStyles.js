@@ -8,6 +8,16 @@ export const StyledMain = styled.main`
   justify-content: space-between;
   border-radius: 1em;
   gap: 2em;
+
+  @media (max-width: 1024px) {
+    width: 80%;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+    border-radius: 1em 1em 0 0;
+  }
 `;
 
 export const Form = styled.form`
@@ -16,6 +26,10 @@ export const Form = styled.form`
   gap: 2em;
   padding: 1em;
   width: 50%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const InputGroup = styled.div`
@@ -36,6 +50,11 @@ export const RadioButtonGrid = styled.div`
   grid-template-rows: repeat(2, 1fr);
   grid-row-gap: 1em;
   grid-column-gap: 1em;
+
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
 `;
 
 export const CustomTipInput = styled.input`
@@ -69,6 +88,11 @@ export const RightContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.neutral.veryDarkCyan};
   border-radius: 0.5em;
   padding: 2em;
+  gap: 2em;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const ResultsContainer = styled.div`
