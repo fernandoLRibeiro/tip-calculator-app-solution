@@ -3,19 +3,22 @@ import styled from "styled-components";
 export const StyledMain = styled.main`
   display: flex;
   background-color: ${({ theme }) => theme.colors.neutral.white};
-  width: 64%;
+  width: 60em;
+  margin: 0;
   padding: 2em;
   justify-content: space-between;
   border-radius: 1em;
   gap: 2em;
 
   @media (max-width: 1024px) {
-    width: 80%;
+    width: 95vw;
+    gap: 1.5em;
   }
 
   @media (max-width: 768px) {
     flex-direction: column;
     width: 100%;
+
     border-radius: 1em 1em 0 0;
   }
 `;
@@ -23,12 +26,13 @@ export const StyledMain = styled.main`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 2em;
-  padding: 1em;
-  width: 50%;
+  gap: 3em;
+  padding: 0.5em;
 
   @media (max-width: 768px) {
     width: 100%;
+    gap: 2em;
+    padding: 0;
   }
 `;
 
@@ -39,8 +43,17 @@ export const InputGroup = styled.div`
   gap: 0.5em;
 `;
 
+export const InputLabelGroup = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`;
+
 export const InputLabel = styled.label`
-  color: ${({ theme }) => theme.colors.neutral.darkGrayishCyan};
+  color: ${({ theme, error }) =>
+    error
+      ? theme.colors.primary.inverted
+      : theme.colors.neutral.darkGrayishCyan};
 `;
 
 export const RadioButtonGrid = styled.div`
@@ -57,34 +70,12 @@ export const RadioButtonGrid = styled.div`
   }
 `;
 
-export const CustomTipInput = styled.input`
-  padding: 0.5em 1em;
-  cursor: pointer;
-  font-size: 1.25em;
-  border-radius: 0.25em;
-  width: 100%;
-  outline: none;
-  border: 0;
-  font-family: inherit;
-  background-color: ${({ theme }) => theme.colors.neutral.veryLightGrayishCyan};
-  color: ${({ theme }) => theme.colors.neutral.veryDarkCyan};
-  text-align: right;
-
-  &:hover {
-    outline: 0.15em solid ${({ theme }) => theme.colors.primary.strongCyan};
-  }
-
-  &::placeholder {
-    text-align: center;
-    color: ${({ theme }) => theme.colors.neutral.grayishCyan};
-  }
-`;
-
 export const RightContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 50%;
+  min-width: 50%;
+  overflow: hidden;
   background-color: ${({ theme }) => theme.colors.neutral.veryDarkCyan};
   border-radius: 0.5em;
   padding: 2em;
@@ -104,7 +95,9 @@ export const ResultsContainer = styled.div`
 export const Result = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
+  gap: 2em;
 `;
 
 export const ResultLabelContainer = styled.div`
@@ -114,18 +107,28 @@ export const ResultLabelContainer = styled.div`
 
 export const ResultLabel = styled.p`
   color: ${({ theme }) => theme.colors.neutral.veryLightGrayishCyan};
+
   margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 0.85em;
+  }
 `;
 
 export const ResultSubtitle = styled.p`
   font-size: 0.8em;
   margin: 0;
-  color: ${({ theme }) => theme.colors.neutral.lightGrayishCyan};
+  color: ${({ theme }) => theme.colors.neutral.grayishCyan};
 `;
 
 export const ResultAmount = styled.h1`
   color: ${({ theme }) => theme.colors.primary.strongCyan};
   margin: 0;
+  font-size: 3em;
+
+  @media (max-width: 1024px) {
+    font-size: 2em;
+  }
 `;
 
 export const ResetButton = styled.button`

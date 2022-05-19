@@ -6,6 +6,7 @@ import {
   Form,
   InputGroup,
   InputLabel,
+  InputLabelGroup,
   RadioButtonGrid,
   ResetButton,
   Result,
@@ -25,6 +26,8 @@ function Main() {
   const [resetDisabled, setResetDisabled] = useState(true);
   const [tipAmount, setTipAmount] = useState(0);
   const [total, setTotal] = useState(0);
+  const [numberOfPeopleError, setNumberOfPeopleError] = useState(false);
+  const [customTip, setCustomTip] = useState("");
 
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -36,6 +39,10 @@ function Main() {
     setNumberOfPeople("");
     setTip("");
   };
+
+  useEffect(() => {
+    setTip(customTip);
+  }, [customTip]);
 
   useEffect(() => {
     if (bill || numberOfPeople || tip) {
@@ -57,7 +64,10 @@ function Main() {
     <StyledMain>
       <Form>
         <InputGroup>
-          <InputLabel>Bill</InputLabel>
+          <InputLabelGroup>
+            <InputLabel>Bill</InputLabel>
+          </InputLabelGroup>
+
           <TextInput
             icon="./images/icon-dollar.svg"
             value={bill}
@@ -67,29 +77,38 @@ function Main() {
 
         <InputGroup>
           <InputLabel>Select Tip %</InputLabel>
+
           <RadioButtonGrid>
             <RadioButton value="5" id="5" tip={tip} setTip={setTip} />
             <RadioButton value="10" id="10" tip={tip} setTip={setTip} />
             <RadioButton value="15" id="15" tip={tip} setTip={setTip} />
             <RadioButton value="25" id="25" tip={tip} setTip={setTip} />
             <RadioButton value="50" id="50" tip={tip} setTip={setTip} />
-            <CustomTipInput
+            <TextInput
               id="custom-tip"
               type="text"
               placeholder="Custom"
-              onChange={(e) => {
-                setTip(e.target.value);
-              }}
+              value={customTip}
+              setValue={setCustomTip}
+              custom
             />
           </RadioButtonGrid>
         </InputGroup>
 
         <InputGroup>
-          <InputLabel>Number of People</InputLabel>
+          <InputLabelGroup>
+            <InputLabel>Number of People</InputLabel>
+            {numberOfPeopleError && (
+              <InputLabel error>Can't be zero</InputLabel>
+            )}
+          </InputLabelGroup>
+
           <TextInput
             icon="./images/icon-dollar.svg"
             value={numberOfPeople}
             setValue={setNumberOfPeople}
+            error={numberOfPeopleError}
+            setError={setNumberOfPeopleError}
           />
         </InputGroup>
       </Form>

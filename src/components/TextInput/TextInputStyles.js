@@ -3,15 +3,21 @@ import styled from "styled-components";
 export const InputContainer = styled.div`
   display: flex;
   align-items: center;
-  padding: 0.2em 1em;
+  padding: 0.2em ${({ custom }) => (custom ? "0.5em" : "1em")};
   width: 100%;
   background-color: ${({ theme }) => theme.colors.neutral.veryLightGrayishCyan};
   border-radius: 0.5em;
   cursor: pointer;
+  outline: ${({ theme, error }) =>
+    error ? `0.15em solid ${theme.colors.primary.inverted}` : `0`};
 
   &:hover,
   &:active {
-    outline: 0.15em solid ${({ theme }) => theme.colors.primary.strongCyan};
+    outline: 0.15em solid
+      ${({ theme, error }) =>
+        error
+          ? theme.colors.primary.inverted
+          : theme.colors.primary.strongCyan};
   }
 `;
 

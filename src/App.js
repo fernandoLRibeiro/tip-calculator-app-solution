@@ -1,5 +1,5 @@
 import { ThemeProvider } from "styled-components";
-import { Container } from "./components/Container/Container.styled";
+import { Container } from "./components/Container/Container";
 import { GlobalStyles } from "./components/GlobalStyles/Global";
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
@@ -8,6 +8,7 @@ const theme = {
   colors: {
     primary: {
       strongCyan: "hsl(172, 67%, 45%)",
+      inverted: "hsl(14, 59%, 63%)",
     },
     neutral: {
       veryDarkCyan: "hsl(183, 100%, 15%)",
