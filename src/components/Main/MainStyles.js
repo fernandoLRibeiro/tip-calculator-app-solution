@@ -5,10 +5,11 @@ export const StyledMain = styled.main`
   background-color: ${({ theme }) => theme.colors.neutral.white};
   width: 60em;
   margin: 0;
-  padding: 2em;
+  padding: 2.5em 2em;
   justify-content: space-between;
   border-radius: 1em;
-  gap: 2em;
+  gap: 3em;
+  box-shadow: 0 1.5em 2.5em -1.5em ${({ theme }) => theme.colors.neutral.grayishCyan};
 
   @media (max-width: 1024px) {
     width: 95vw;
@@ -17,7 +18,10 @@ export const StyledMain = styled.main`
 
   @media (max-width: 768px) {
     flex-direction: column;
+    gap: 3em;
     width: 100%;
+    box-shadow: none;
+    padding: 2em;
 
     border-radius: 1em 1em 0 0;
   }
@@ -74,15 +78,17 @@ export const RightContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-width: 50%;
+  min-width: 48%;
   overflow: hidden;
   background-color: ${({ theme }) => theme.colors.neutral.veryDarkCyan};
   border-radius: 0.5em;
-  padding: 2em;
+  padding: 2.5em;
   gap: 2em;
 
   @media (max-width: 768px) {
     width: 100%;
+    padding: 2em 1.25em 1.25em 1.25em;
+    gap: 1.5em;
   }
 `;
 
@@ -90,6 +96,10 @@ export const ResultsContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2em;
+
+  @media (max-width: 768px) {
+    gap: 1.25em;
+  }
 `;
 
 export const Result = styled.div`

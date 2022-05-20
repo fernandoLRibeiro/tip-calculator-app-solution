@@ -39,6 +39,7 @@ function TextInput({
         onChange={(e) => handleChange(e)}
         type="text"
         placeholder={placeholder ? `${placeholder}` : "0"}
+        custom={custom}
       />
     </InputContainer>
   );

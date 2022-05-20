@@ -8,4 +8,9 @@ export const Container = styled.div`
   gap: 4em;
   min-height: 100vh;
   width: 100%;
+
+  @media (max-width: 768px) {
+    justify-content: flex-end;
+    gap: 2.5em;
+  }
 `;

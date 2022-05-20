@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const InputContainer = styled.div`
   display: flex;
   align-items: center;
-  padding: 0.2em ${({ custom }) => (custom ? "0.5em" : "1em")};
+  padding: 0.3em ${({ custom }) => (custom ? "0.5em" : "1em")};
   width: 100%;
   background-color: ${({ theme }) => theme.colors.neutral.veryLightGrayishCyan};
   border-radius: 0.5em;

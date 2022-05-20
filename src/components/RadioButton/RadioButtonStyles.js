@@ -3,13 +3,12 @@ import styled from "styled-components";
 export const Label = styled.label`
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 0.5em 1em;
+  padding: 0.3em 1em;
   background-color: ${({ theme }) => theme.colors.neutral.veryDarkCyan};
   color: ${({ theme }) => theme.colors.neutral.white};
   border-radius: 0.25em;
   cursor: pointer;
-  font-size: 1.25em;
+  font-size: 1.5em;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.neutral.lightGrayishCyan};
