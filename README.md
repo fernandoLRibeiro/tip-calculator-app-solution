@@ -27,16 +27,16 @@ Users should be able to:
 
 ### Screenshot
 
-Desktop:
+#### Desktop:
 ![](./screenshots/desktop.png)
 
-Mobile:
+#### Mobile:
 ![](./screenshots/mobile.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: Coming soon
+- Live Site URL: [https://resonant-alfajores-b9a524.netlify.app/](https://resonant-alfajores-b9a524.netlify.app/)
 
 ## My process
 
