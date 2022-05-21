@@ -10,7 +10,7 @@ function RadioButton({ value, id, tip, setTip }) {
     } else {
       setChecked(false);
     }
-  }, [tip]);
+  }, [tip, value]);
 
   return (
     <>

@@ -22,7 +22,7 @@ function TextInput({
       setValue(e.target.value);
     }
 
-    if (e.target.value == "0") {
+    if (e.target.value === "0") {
       setError(true);
     } else {
       setError(false);

@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledHeader, Logo } from "./HeaderStyles";
+import { Logo } from "./HeaderStyles";
 
 function Header() {
   return (

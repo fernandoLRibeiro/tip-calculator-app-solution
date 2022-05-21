@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import RadioButton from "../RadioButton/RadioButton";
 import TextInput from "../TextInput/TextInput";
 import {
-  CustomTipInput,
   Form,
   InputGroup,
   InputLabel,
