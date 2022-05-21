@@ -6,7 +6,8 @@ export const StyledMain = styled.main`
   width: 60em;
   margin: 0;
   padding: 2.5em 2em;
-  justify-content: space-between;
+  justify-items: space-between;
+
   border-radius: 1em;
   gap: 3em;
   box-shadow: 0 1.5em 2.5em -1.5em ${({ theme }) => theme.colors.neutral.grayishCyan};
@@ -31,7 +32,6 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 3em;
-  padding: 0.5em;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -113,6 +113,7 @@ export const Result = styled.div`
 export const ResultLabelContainer = styled.div`
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
 `;
 
 export const ResultLabel = styled.p`

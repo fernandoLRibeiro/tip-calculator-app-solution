@@ -25,8 +25,8 @@ function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
+        <GlobalStyles />
         <Container>
-          <GlobalStyles />
           <Header />
           <Main />
         </Container>

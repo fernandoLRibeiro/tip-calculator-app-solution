@@ -38,6 +38,7 @@ export const Input = styled.input`
   cursor: pointer;
 
   &::placeholder {
-    color: ${({ theme }) => theme.colors.neutral.grayishCyan};
+    text-align: ${({ custom }) => (custom ? "center" : "inherit")};
+    color: ${({ theme }) => theme.colors.neutral.darkGrayishCyan};
   }
 `;
