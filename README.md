@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: Coming soon
-- Live Site URL: [https://resonant-alfajores-b9a524.netlify.app/](https://resonant-alfajores-b9a524.netlify.app/)
+- [Solution URL](https://www.frontendmentor.io/solutions/tip-calculator-app-built-with-react-and-styled-components-FnThL40T8-)
+- [Live Site URL](https://resonant-alfajores-b9a524.netlify.app/)
 
 ## My process
 
