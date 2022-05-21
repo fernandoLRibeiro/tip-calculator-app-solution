@@ -9,6 +9,7 @@ function TextInput({
   setError,
   error,
   custom,
+  alt,
 }) {
   const handleChange = (e) => {
     if (
@@ -32,7 +33,7 @@ function TextInput({
   return (
     <InputContainer error={error} custom={custom}>
       {/* Only show an Icon if it has an icon prop */}
-      {icon && <Icon src={icon} />}
+      {icon && <Icon src={icon} alt={alt} />}
 
       <Input
         value={value}

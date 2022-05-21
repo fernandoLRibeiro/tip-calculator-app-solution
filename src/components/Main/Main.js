@@ -71,6 +71,7 @@ function Main() {
             icon="./images/icon-dollar.svg"
             value={bill}
             setValue={setBill}
+            alt="dollar sign"
           />
         </InputGroup>
 
@@ -104,6 +105,7 @@ function Main() {
 
           <TextInput
             icon="./images/icon-dollar.svg"
+            alt="people icon"
             value={numberOfPeople}
             setValue={setNumberOfPeople}
             error={numberOfPeopleError}
