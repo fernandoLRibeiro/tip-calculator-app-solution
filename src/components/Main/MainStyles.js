@@ -8,7 +8,7 @@ export const StyledMain = styled.main`
   padding: 2.5em 2em;
   justify-items: space-between;
 
-  border-radius: 1em;
+  border-radius: 1.5em;
   gap: 3em;
   box-shadow: 0 1.5em 2.5em -1.5em ${({ theme }) => theme.colors.neutral.grayishCyan};
 
@@ -81,7 +81,7 @@ export const RightContainer = styled.div`
   min-width: 48%;
   overflow: hidden;
   background-color: ${({ theme }) => theme.colors.neutral.veryDarkCyan};
-  border-radius: 0.5em;
+  border-radius: 1em;
   padding: 2.5em;
   gap: 2em;
 
