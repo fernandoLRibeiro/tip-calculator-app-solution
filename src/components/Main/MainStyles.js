@@ -9,7 +9,7 @@ export const StyledMain = styled.main`
   justify-items: space-between;
 
   border-radius: 1.5em;
-  gap: 3em;
+  gap: 2em;
   box-shadow: 0 1.5em 2.5em -1.5em ${({ theme }) => theme.colors.neutral.grayishCyan};
 
   @media (max-width: 1024px) {
@@ -32,6 +32,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 3em;
+  padding: 0 1em;
 
   @media (max-width: 768px) {
     width: 100%;
